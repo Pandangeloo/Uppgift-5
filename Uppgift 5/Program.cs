@@ -8,3 +8,6 @@
         }
     }
 }
+
+
+Console.WriteLine("Hej funkar du?");
