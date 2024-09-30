@@ -8,12 +8,12 @@ namespace EnkelKalkylator
         static void Main(string[] args)
         {
             bool keepOnGoing = true;
-
+            Console.WriteLine("Enkel Kalkylator");
             while (keepOnGoing)
             {
                 
+            //Start"Menyn"
             
-            Console.WriteLine("Enkel Kalkylator");
             Console.WriteLine("Ange operation (+, -, *, /): ");
             char operation = Console.ReadKey().KeyChar;
                
@@ -31,6 +31,7 @@ namespace EnkelKalkylator
             }
 
 
+                //Måste skapa så det inte går att skriva in något annat än fungerande siffror. 
 
             Console.WriteLine("Ange första talet: ");
             double num1 = Convert.ToDouble(Console.ReadLine());
@@ -49,6 +50,7 @@ namespace EnkelKalkylator
 
             double result = 0;
 
+                //Här löser vi matematiken, eller börjar om. 
             switch (operation)
             {
                 case '+':
@@ -65,17 +67,19 @@ namespace EnkelKalkylator
                     break;
                 default:
                     Console.WriteLine("Ogiltligt");
-                    return;
+                    continue;
             }
 
             Console.WriteLine($"\nResultat: {result} \n");
 
+                
+                
+                
+                //Avslutningsmenyn, går att välja att hoppa upp till start eller avsluta med if-else. 
                 Console.WriteLine("För att avsluta kalkylatorn tryck 1. \nFör att försöka igen tryck på vad som helst.");
                 Console.WriteLine(" ");
                 char yesOrNo = Console.ReadKey().KeyChar;
-
-               
-                
+                              
                 if (yesOrNo == '1')
                 {
                     Console.WriteLine("\nNu avslutas programmet. Hejdå!");
@@ -84,7 +88,8 @@ namespace EnkelKalkylator
                 }
                 else 
                 {
-                    Console.WriteLine("Kul att du vill använda kalkylatorn igen! Då börjar vi om");
+                    Console.WriteLine("\nKul att du vill använda kalkylatorn igen! Då börjar vi om");
+                    Console.WriteLine();
                     continue;
                 }
                 
