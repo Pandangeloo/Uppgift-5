@@ -70,21 +70,24 @@ namespace EnkelKalkylator
 
             Console.WriteLine($"\nResultat: {result} \n");
 
-                Console.WriteLine("Vill du använda kalkylatron en gång till?");
-                Console.WriteLine("Ange siffra för följande: \n 1=JA 2=NEJ");
+                Console.WriteLine("För att avsluta kalkylatorn tryck 1. \nFör att försöka igen tryck på vad som helst.");
+                Console.WriteLine(" ");
                 char yesOrNo = Console.ReadKey().KeyChar;
 
-                if (yesOrNo == '2')
+               
+                
+                if (yesOrNo == '1')
                 {
                     Console.WriteLine("\nNu avslutas programmet. Hejdå!");
                     Console.ReadKey();
                     return;
                 }
-                else
+                else 
                 {
-                    Console.WriteLine();
+                    Console.WriteLine("Kul att du vill använda kalkylatorn igen! Då börjar vi om");
                     continue;
                 }
+                
 
                 Console.ReadKey();
 
