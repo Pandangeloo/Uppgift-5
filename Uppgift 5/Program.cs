@@ -110,10 +110,7 @@ namespace EnkelKalkylator
                     continue;
                 }
                 
-
-                Console.ReadKey();
-
-
+                              
             }
 
 
