@@ -30,18 +30,35 @@ namespace EnkelKalkylator
                 
             }
 
-
-                //Måste skapa så det inte går att skriva in något annat än fungerande siffror. 
+                                
+                double num1;
+                double num2;
 
             Console.WriteLine("Ange första talet: ");
-            double num1 = Convert.ToDouble(Console.ReadLine());
-            
+
+                //En loop som kollar att det är en korrekt inmatning
+                //Om det är fel kommer den starta om igen tills dess man skriver en siffra, då går den vidare. 
+
+                while (!double.TryParse(Console.ReadLine(), out num1))
+                {
+                    Console.WriteLine("Du skrev nog fel. Försök igen med ett giltligt tal. ");
+                }
+
+                             
+                       
             Console.WriteLine("Ange andra talet:");
-            double num2 = Convert.ToDouble(Console.ReadLine());
+
+                //En loop som kollar att det är en korrekt inmatning
+                //Om det är fel kommer den starta om igen tills dess man skriver en siffra, då går den vidare
+
+                while (!double.TryParse(Console.ReadLine(), out num2))
+                {
+                    Console.WriteLine("Du skrev nog fel. Försök igen med ett giltligt tal. ");
+                }
 
 
-            //Kontrollerar division med 0
-            if (operation == '/' && num2 == 0)
+                //Kontrollerar division med 0
+                if (operation == '/' && num2 == 0)
             {
                 Console.WriteLine("Division med 0 fungerar inte. Du får börja om");
                 continue ;
