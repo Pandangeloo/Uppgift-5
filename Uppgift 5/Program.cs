@@ -13,18 +13,20 @@ namespace EnkelKalkylator
             {
                 
             
-
             Console.WriteLine("Enkel Kalkylator");
             Console.WriteLine("Ange operation (+, -, *, /): ");
             char operation = Console.ReadKey().KeyChar;
-                    //  char.Parse(Console.ReadLine());
+               
+                
+                //Tom rad för snyggare i konsolen
+                Console.WriteLine();
 
             //Programmet ska inte funka om man skriver in fel tecken. 
             
                 if (operation != '+' && operation != '-' && operation != '*' && operation != '/')
             {
-                Console.WriteLine("Nu blev det fel. Försök igen");
-                return;
+                Console.WriteLine("Nu blev det fel. Försök igen\n");
+                continue;
                 
             }
 
@@ -40,8 +42,8 @@ namespace EnkelKalkylator
             //Kontrollerar division med 0
             if (operation == '/' && num2 == 0)
             {
-                Console.WriteLine("Division med 0 fungerar inte.");
-                return ;
+                Console.WriteLine("Division med 0 fungerar inte. Du får börja om");
+                continue ;
             }
 
 
@@ -66,17 +68,35 @@ namespace EnkelKalkylator
                     return;
             }
 
-            Console.WriteLine($"Resultat: {result}");
+            Console.WriteLine($"\nResultat: {result} \n");
 
-            Console.ReadKey();
+                Console.WriteLine("Vill du använda kalkylatron en gång till?");
+                Console.WriteLine("Ange siffra för följande: \n 1=JA 2=NEJ");
+                char yesOrNo = Console.ReadKey().KeyChar;
+
+                if (yesOrNo == '2')
+                {
+                    Console.WriteLine("\nNu avslutas programmet. Hejdå!");
+                    Console.ReadKey();
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine();
+                    continue;
+                }
+
+                Console.ReadKey();
 
 
             }
 
 
-            Console.WriteLine("Nu avslutas programmet. Hejdå!");
+            
         
         }
 
     }
+
+
 }
